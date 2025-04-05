@@ -22,6 +22,7 @@ add_subdirectory(sdl2 EXCLUDE_FROM_ALL)
 # Set include directories
 include_directories(include)
 include_directories(${SDL2_INCLUDE_DIRS})
+include_directories(${CMAKE_SOURCE_DIR}/sdl2/include)
 
 # Platform specific settings
 if(APPLE)
