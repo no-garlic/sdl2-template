@@ -4,7 +4,12 @@
 /cmake-build-*/
 
 # IDE specific files
-#.vscode/
+.vscode/
+.vscode/*
+!.vscode/tasks.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/c_cpp_properties.json
 .idea/
 *.swp
 *.swo
