@@ -164,6 +164,7 @@ int main(int argc, char* argv[]) {
          triangleCenterY + triangleSize / 2},
         {triangleCenterX + triangleSize / 2,
          triangleCenterY + triangleSize / 2}};
+
     SDL_RenderDrawLine(renderer.get(), trianglePoints[0].x, trianglePoints[0].y,
                        trianglePoints[1].x, trianglePoints[1].y);
     SDL_RenderDrawLine(renderer.get(), trianglePoints[1].x, trianglePoints[1].y,
