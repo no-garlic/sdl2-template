@@ -1,0 +1,62 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build SDL2 Template",
+            "type": "shell",
+            "command": "cmake --build ${workspaceFolder}/build --config Debug",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "windows": {
+                "problemMatcher": [
+                    "$msCompile"
+                ]
+            }
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}/build/* && mkdir -p ${workspaceFolder}/build && cd ${workspaceFolder}/build && cmake ..",
+            "windows": {
+                "command": "if exist ${workspaceFolder}\\build rmdir /s /q ${workspaceFolder}\\build && mkdir ${workspaceFolder}\\build && cd ${workspaceFolder}\\build && cmake .."
+            },
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Configure CMake (Debug)",
+            "type": "shell",
+            "command": "mkdir -p ${workspaceFolder}/build && cd ${workspaceFolder}/build && cmake .. -DCMAKE_BUILD_TYPE=Debug",
+            "windows": {
+                "command": "if not exist ${workspaceFolder}\\build mkdir ${workspaceFolder}\\build && cd ${workspaceFolder}\\build && cmake .. -G \"Visual Studio 17 2022\" -A x64"
+            },
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Configure CMake (Release)",
+            "type": "shell",
+            "command": "mkdir -p ${workspaceFolder}/build && cd ${workspaceFolder}/build && cmake .. -DCMAKE_BUILD_TYPE=Release",
+            "windows": {
+                "command": "if not exist ${workspaceFolder}\\build mkdir ${workspaceFolder}\\build && cd ${workspaceFolder}\\build && cmake .. -G \"Visual Studio 17 2022\" -A x64 -DCMAKE_BUILD_TYPE=Release"
+            },
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Application",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/bin/sdl2-template",
+            "windows": {
+                "command": "${workspaceFolder}\\build\\bin\\Debug\\sdl2-template.exe"
+            },
+            "group": "test",
+            "problemMatcher": []
+        }
+    ]
+}

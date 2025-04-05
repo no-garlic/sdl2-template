@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug SDL2 Template (macOS)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/sdl2-template",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build SDL2 Template",
+            "osx": {
+                "MIMode": "lldb"
+            }
+        },
+        {
+            "name": "Debug SDL2 Template (Windows)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/Debug/sdl2-template.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "internalConsole",
+            "preLaunchTask": "Build SDL2 Template"
+        }
+    ]
+}
